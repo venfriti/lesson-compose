@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Data Structures</string>
+    <string name="introduction">Introduction</string>
+    <string name="importance_in_programming">Importance in Programming</string>
+    <string name="big_o_notation">Big O Notation</string>
+    <string name="understanding_time_and_space_complexties">Understanding time and space complexties</string>
+    <string name="arrays_and_strings">Arrays and Strings</string>
+    <string name="basic_operations_and_manipulations">Basic operations and manipulations</string>
+    <string name="linked_lists">Linked Lists</string>
+    <string name="simple_linked_lists_doubled_linked_lists_and_circular_linked_lists">Simple linked lists, doubled linked lists and circular linked lists</string>
+    <string name="stacks_and_queues">Stacks and Queues</string>
+    <string name="implementations_and_use_cases">Implementations and use cases</string>
+</resources>
