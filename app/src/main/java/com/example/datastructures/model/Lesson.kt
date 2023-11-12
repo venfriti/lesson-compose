@@ -4,7 +4,8 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
 data class Lesson(
-    @StringRes val name : Int,
+    val day: Int,
+    @StringRes val title : Int,
     @StringRes val description: Int,
     @DrawableRes val image: Int,
 )
