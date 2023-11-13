@@ -1,10 +1,15 @@
 package com.example.datastructures
 
 import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
+import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -19,6 +24,11 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -53,7 +63,7 @@ fun TopAppBar(modifier : Modifier = Modifier) {
                 style = MaterialTheme.typography.displayLarge
             )
         },
-        modifier = modifier.padding(top = 8.dp)
+        modifier = modifier.padding()
     )
 }
 
@@ -71,6 +81,9 @@ fun LessonCard(
     lesson: Lesson,
     modifier : Modifier = Modifier
 ){
+    var expanded by rememberSaveable {
+        mutableStateOf(false)
+    }
     Card(
         shape = MaterialTheme.shapes.small,
         modifier = modifier
@@ -79,20 +92,49 @@ fun LessonCard(
             .clip(MaterialTheme.shapes.small)
             .clickable(
                 enabled = true,
-                onClick = {}
+                onClick = {expanded = !expanded}
             )
     ){
-        Column(modifier = Modifier.padding(16.dp)) {
-            Text(text = "Day ${lesson.day}")
-            Text(
-                text = stringResource(id = lesson.title),
-                style = MaterialTheme.typography.titleMedium,
-                modifier = Modifier.padding(bottom = 4.dp)
+        Column(modifier = Modifier
+            .animateContentSize(
+                animationSpec = spring(
+                    dampingRatio = Spring.DampingRatioLowBouncy,
+                    stiffness = Spring.StiffnessMediumLow
+                )
             )
+            .padding(16.dp)
+        ) {
+            Text(text = "Day ${lesson.day}")
+            LessonTitle(lesson.title)
             LessonImage(lesson.image)
-            Text(text = stringResource(id = lesson.description))
+            if (expanded){
+                LessonDescription(lesson.description)
+            }
         }
     }
+}
+
+@Composable
+fun LessonDescription(
+    @StringRes description: Int
+) {
+    Text(
+        text = stringResource(
+            id = description
+        ),
+        modifier = Modifier.padding(top = 4.dp)
+    )
+}
+
+@Composable
+fun LessonTitle(
+    @StringRes title: Int
+) {
+    Text(
+        text = stringResource(id = title),
+        style = MaterialTheme.typography.titleMedium,
+        modifier = Modifier.padding(bottom = 4.dp)
+    )
 }
 
 @Composable
@@ -106,6 +148,7 @@ fun LessonImage(
         modifier = Modifier
             .fillMaxWidth()
             .size(200.dp)
+            .padding(bottom = 4.dp)
     )
 }
 

@@ -33,6 +33,12 @@ object LessonsRepository {
             R.string.stacks_and_queues,
             R.string.implementations_and_use_cases,
             R.drawable.lesson_5
+        ),
+        Lesson(
+            6,
+            R.string.trees,
+            R.string.trees_description,
+            R.drawable.lesson_6
         )
     )
 }

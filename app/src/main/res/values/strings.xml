@@ -1,13 +1,39 @@
 <resources>
     <string name="app_name">Data Structures</string>
     <string name="introduction">Introduction</string>
-    <string name="importance_in_programming">Importance in Programming</string>
+    <string name="importance_in_programming">
+        Importance in Programming: Understand the role of
+        data structures and algorithms in computer science and programming.
+        Explore how they are fundamental to solving computational problems efficiently.
+    </string>
     <string name="big_o_notation">Big O Notation</string>
-    <string name="understanding_time_and_space_complexties">Understanding time and space complexties</string>
+    <string name="understanding_time_and_space_complexties">
+        Understanding Time and Space Complexity:
+        Dive into the concept of time complexity
+        (how the runtime of an algorithm grows with input size)
+        and space complexity (how much memory an algorithm uses).
+    </string>
     <string name="arrays_and_strings">Arrays and Strings</string>
-    <string name="basic_operations_and_manipulations">Basic operations and manipulations</string>
+    <string name="basic_operations_and_manipulations">
+        Basic Operations and Manipulation:
+        Understand how to perform common operations on arrays and strings,
+        such as insertion, deletion, and searching.
+        Explore ways to manipulate and process string data.
+    </string>
     <string name="linked_lists">Linked Lists</string>
-    <string name="simple_linked_lists_doubled_linked_lists_and_circular_linked_lists">Simple linked lists, doubled linked lists and circular linked lists</string>
+    <string name="simple_linked_lists_doubled_linked_lists_and_circular_linked_lists">
+        Singly Linked Lists: Learn the structure of singly linked lists
+        and how to perform operations like insertion and deletion.
+        \nDoubly Linked Lists: Understand the concept of doubly linked lists,
+        which have nodes with both forward and backward pointers.
+    </string>
     <string name="stacks_and_queues">Stacks and Queues</string>
-    <string name="implementations_and_use_cases">Implementations and use cases</string>
+    <string name="implementations_and_use_cases">Implementations and Use Cases:
+        Dive into stack and queue implementations. Understand the Last-In-First-Out
+        (LIFO) nature of stacks and the First-In-First-Out (FIFO) nature of queues.
+        Explore real-world scenarios where these data structures are useful.
+    </string>
+    <string name="trees">Trees</string>
+    <string name="trees_description">Binary Trees: Learn the basics of binary trees, where each node has at most two children.\nBinary Search Trees: Explore the properties of binary search trees, where the left child is smaller, and the right child is greater than the parent.</string>
+
 </resources>
